@@ -31,3 +31,21 @@ const getDayType = (v) => {
     }
 }
 const result2 = getDayType("Friday");
+
+
+// * Question No: 3 - Username Gatekeeper
+
+const validateUsername = (v) => {
+    const value = v.toLowerCase();
+    const spaces = value.split(" ").length - 1;
+    if(value.length < 4){
+        return "Too Short";
+    }else if(spaces > 0){
+        return "No Space Allowed";
+    }else if(value.includes("admin")){
+        return "Reserved Word";
+    }else{
+        return "Available";
+    }
+}
+const result3 = validateUsername("rahim123");
