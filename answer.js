@@ -49,3 +49,20 @@ const validateUsername = (v) => {
     }
 }
 const result3 = validateUsername("rahim123");
+
+
+// * Question No: 4 - Dhaka CNG Fare Meter
+
+const getCngFare = (distance, isNight = false, waitingMinutes = 0) => {
+    let extraDistance = distance - 2;
+    if(distance <= 2 && isNight === false && waitingMinutes === 0){
+        return 50;
+    }else if((distance > 2 || waitingMinutes > 0) && isNight === false){
+        return 50 + (extraDistance * 15) + (waitingMinutes * 2);
+    }else if(isNight === true){
+        let total = 50 + (extraDistance * 15) + (waitingMinutes * 2);
+        let persent = (total * 20) / 100;
+        return total + persent;
+    }
+}
+const result4 = getCngFare(2);
