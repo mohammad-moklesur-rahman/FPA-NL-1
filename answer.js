@@ -8,3 +8,26 @@ if(!!v){
 }
 }
 const result = describeValue("hello");
+
+
+// * Question No: 2 - Bangladesh Weekend Machine
+
+const getDayType = (v) => {
+    const lowerCaseV = v.toLowerCase();
+    switch (lowerCaseV){
+        case "friday":
+        case "saturday":
+            return "Weekend";
+
+        case "sunday":
+        case "monday":
+        case "tuesday":
+        case "wednesday":
+        case "thursday":
+            return "Working Day";
+
+        default:
+            return "Invalid Day";
+    }
+}
+const result2 = getDayType("Friday");
