@@ -66,3 +66,23 @@ const getCngFare = (distance, isNight = false, waitingMinutes = 0) => {
     }
 }
 const result4 = getCngFare(2);
+
+
+// * Question No: 5 - Run Chase Commentator
+
+const getChaseVerdict = (target, scored, ballsLeft) => {
+    let runsNeeded = target - scored;
+    let requiredRate = (runsNeeded / ballsLeft) * 6;
+    if(runsNeeded <= 0){
+        return "Won";
+    }else if(ballsLeft <= 0){
+        return "Lost";
+    }else if(requiredRate <= 6){
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | Comfortable`;
+    }else if(requiredRate > 6 && requiredRate <= 12){
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | Tough`;
+    }else if(requiredRate > 12){
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | Almost Impossible`;
+    }
+}
+const result5 = getChaseVerdict(200, 200, 12);
